@@ -9,19 +9,16 @@ public class Vending {
 
     public static void main(String[] args) {
         int stock = 5;
-
-        List<Item> vendingList = new ArrayList<>();
+        String userInput = "A3";
+        Stocker stocker = new Stocker();
         Map<Object, Integer> vendingMap = new HashMap<Object, Integer>();
 
-        Stocker stocker = new Stocker();
+        for(Item list : stocker.getVendingList()){
 
-        Chip potatoCrisp = new Chip(stocker.getPosition(), stocker.getName(), stocker.getPrice(), stocker.getType());
+        }
 
-        vendingMap.put(potatoCrisp, stock);
 
-        System.out.println(vendingMap.get(potatoCrisp));
 
-        vendingList.add(potatoCrisp);
 
     }
 }
