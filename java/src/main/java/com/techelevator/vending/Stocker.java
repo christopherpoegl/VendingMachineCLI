@@ -39,19 +39,19 @@ public class Stocker {
                 while (vending.hasNextLine()) {
 
                     String inputLine = vending.nextLine();
-                    inputLine = inputLine.replace("|", " ");//investigate later
-                    String[] lineArr = inputLine.split(" ");
+                    inputLine = inputLine.replace("|", ",");//investigate later
+                    String[] lineArr = inputLine.split(",");
 
                     if (inputLine.contains(userInput)) {
 
                         position = lineArr[0];
-                        System.out.println(position);
+                      //  System.out.println(position);
                         name = lineArr[1];
-                        System.out.println(name);
+                      //  System.out.println(name);
                         price = lineArr[2];
-                        System.out.println(price);
+                       // System.out.println(price);
                         type = lineArr[3];
-                        System.out.println(type);
+                       // System.out.println(type);
                     }
 
                 }

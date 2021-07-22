@@ -25,12 +25,10 @@ public class Chip extends Item{
 
     public Chip(String position, String name, String price, String type) {
         super(position, name, price, type);
-
-//        this.position = stocker.getPosition();
-//        this.name = stocker.getName();
-//        this.price = stocker.getPrice();
-//        this.type = stocker.getType();
-//
-//        System.out.println(this.name);
+        Stocker stocker = new Stocker();
+        this.position = stocker.getPosition();
+        this.name = stocker.getName();
+        this.price = stocker.getPrice();
+        this.type = stocker.getType();
     }
 }
