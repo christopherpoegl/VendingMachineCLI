@@ -38,9 +38,7 @@ public class Stocker {
             e.printStackTrace();
         }
     }
-<<<<<<< HEAD
+
 
 }
-=======
-}
->>>>>>> b00e2c3cacf2967c290c05a13bd8ae0511d2bc9a
+
