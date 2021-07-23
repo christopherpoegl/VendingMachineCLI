@@ -21,8 +21,8 @@ public class Main {
         System.out.println(quarters+" " + dimes+ " " + nickles + " " + pennies);
 
         LocalDateTime dateTime = LocalDateTime.now();
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm: a");
-        System.out.println(dateTime);
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss a");
+        System.out.println(dateTime.format(myFormatObj));
 
     }
 }
