@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Stocker {
+
     List<Item> items = new ArrayList<>();
     File file = new File("vendingmachine.csv");
     Item [] item = new Item[16];
@@ -45,6 +46,6 @@ public class Stocker {
     }catch(FileNotFoundException e){
             e.printStackTrace();
         }
-        }
+    }
 
 }
