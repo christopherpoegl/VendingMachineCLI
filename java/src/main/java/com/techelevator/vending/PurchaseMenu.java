@@ -1,7 +1,5 @@
 package com.techelevator.vending;
 
-import com.techelevator.VendingMachineCLI;
-import com.techelevator.vending.Selection;
 import com.techelevator.view.Menu;
 
 public class PurchaseMenu {
