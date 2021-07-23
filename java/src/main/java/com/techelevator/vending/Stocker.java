@@ -46,8 +46,6 @@ public class Stocker {
                 while (vending.hasNextLine()) {
 
                     String inputLine = vending.nextLine();
-                    inputLine = inputLine.replace("|", ",");//investigate later
-                    String[] lineArr = inputLine.split(",");
 
                     if (inputLine.contains("Chip")) {
                         position = lineArr[0];
