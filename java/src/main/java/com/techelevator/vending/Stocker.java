@@ -7,103 +7,44 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Stocker {
+    List<Item> items = new ArrayList<>();
+    File file = new File("vendingmachine.csv");
+    Item [] item = new Item[16];
+    int count = 0;
 
+    public void createList(){
 
-        String position;
-        String name;
-        String price;
-        String type;
-        String stock;
+        try {
+            Scanner scanner = new Scanner(file);
 
-        String userInput = "A1";
-        File vendingFile = new File("vendingmachine.csv");
-        List<Item> vendingList = new ArrayList<>();
+            while (scanner.hasNextLine()) {
 
+                String tempLine = scanner.nextLine();
+                tempLine = tempLine.replace("|", ",");
+                String[] lineArr = tempLine.split(",");
 
-    public String getPosition() {
-        return position;
-    }
+                String position = lineArr[0];
+                String name = lineArr[1];
+                String price = lineArr[2];
+                String type = lineArr[3];
 
-    public String getName() {
-        return name;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public List<Item> getVendingList() {
-        return vendingList;
-    }
-
-    {
-            try {
-                Scanner vending = new Scanner(vendingFile);
-                while (vending.hasNextLine()) {
-
-                    String inputLine = vending.nextLine();
-                    inputLine = inputLine.replace("|", ",");//investigate later
-                    String[] lineArr = inputLine.split(",");
-
-                    if (inputLine.contains("Chip")) {
-                        position = lineArr[0];
-                      //  System.out.println(position);
-                        name = lineArr[1];
-                      //  System.out.println(name);
-                        price = lineArr[2];
-                       // System.out.println(price);
-                        type = lineArr[3];
-                       // System.out.println(type);
-                        Chip chip = new Chip(position, name, price, type);
-                        vendingList.add(chip);
-                    }
-                    else if (inputLine.contains("Candy")) {
-                        position = lineArr[0];
-                        //  System.out.println(position);
-                        name = lineArr[1];
-                        //  System.out.println(name);
-                        price = lineArr[2];
-                        // System.out.println(price);
-                        type = lineArr[3];
-                        // System.out.println(type);
-                        Candy candy = new Candy(position, name, price, type);
-                        vendingList.add(candy);
-                    }
-                    else if (inputLine.contains("Drink")) {
-                        position = lineArr[0];
-                        //  System.out.println(position);
-                        name = lineArr[1];
-                        //  System.out.println(name);
-                        price = lineArr[2];
-                        // System.out.println(price);
-                        type = lineArr[3];
-                        // System.out.println(type);
-                        Drink drink = new Drink(position, name, price, type);
-                        vendingList.add(drink);
-                    }
-                    else if (inputLine.contains("Gum")) {
-                        position = lineArr[0];
-                        //  System.out.println(position);
-                        name = lineArr[1];
-                        //  System.out.println(name);
-                        price = lineArr[2];
-                        // System.out.println(price);
-                        type = lineArr[3];
-                        // System.out.println(type);
-                        Gum gum = new Gum(position, name, price, type);
-                        vendingList.add(gum);
-                    }
-
+                if(type.equals("Chip")) {
+                    items.add(new Chip(position, name, price, type));
                 }
-
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+                else if(type.equals("Candy")) {
+                    items.add(new Candy(position, name, price, type));
+               }
+                else if(type.equals("Drink")) {
+                    items.add(new Drink(position, name, price, type));
+                }
+                else if(type.equals("Gum")) {
+                    items.add(new Gum(position, name, price, type));
+                }
             }
 
+    }catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
         }
 
-    }
+}
