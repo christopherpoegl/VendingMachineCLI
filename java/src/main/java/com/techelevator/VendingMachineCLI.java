@@ -1,13 +1,11 @@
 package com.techelevator;
 
 
+import com.techelevator.vending.PurchaseMenu;
 import com.techelevator.vending.Selection;
-import com.techelevator.vending.Stocker;
 import com.techelevator.view.Menu;
 
 public class VendingMachineCLI {
-
-	Selection selection = new Selection();
 
 	private static final String MAIN_MENU_OPTION_DISPLAY_ITEMS = "Display Vending Machine Items";
 	private static final String MAIN_MENU_OPTION_PURCHASE = "Purchase";
@@ -15,9 +13,11 @@ public class VendingMachineCLI {
 
 	private Menu menu;
 
+
 	public VendingMachineCLI(Menu menu) {
 		this.menu = menu;
 	}
+	PurchaseMenu purchase = new PurchaseMenu(menu);
 
 	public void run() {
 		while (true) {
@@ -25,11 +25,11 @@ public class VendingMachineCLI {
 
 			if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) {
 
-				selection.createList();
-				selection.getItemList();
+				//selection.createList();
+				//selection.getItemList();
 
 			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
-				// do purchase
+				purchase.run();
 			}
 		}
 	}

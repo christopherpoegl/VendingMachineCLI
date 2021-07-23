@@ -29,7 +29,7 @@ public class Item {
         this.stock = set;
     }
     public String getItemInfoToString(){
-        String info = this.position +", "+ this.name +", "+ this.price +", "+ this.stock;
+        String info = this.position +", "+ this.name +", "+ this.price +", Remaining Stock="+ this.stock;
         return info;
     }
 
