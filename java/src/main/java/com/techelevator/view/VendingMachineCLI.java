@@ -20,7 +20,7 @@ public class VendingMachineCLI {
         this.menu = menu;
     }
     public void run() {
-        selection.createList();
+        selection.getStockerList();
         while (true) {
             String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
             if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) {

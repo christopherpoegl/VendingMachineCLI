@@ -7,7 +7,7 @@ public class Selection {
     Purchase purchase = new Purchase();
     Stocker stocker = new Stocker();
     String userInput;
-    public void createList(){
+    public void getStockerList(){
         stocker.createList();
     }
 
