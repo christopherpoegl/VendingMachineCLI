@@ -1,11 +1,13 @@
 package com.techelevator.vending;
 
+
 public class Selection {
     Stocker stocker = new Stocker();
     String userInput;
     public void createList(){
         stocker.createList();
     }
+
     public void findItems(){
         for(int i = 0; i < stocker.items.size(); i++){
             Item selected = stocker.items.get(i);
@@ -16,7 +18,10 @@ public class Selection {
                     selected.setStock(stockRemaining.toString());
                     System.out.println(selected.getItemInfoToString());
                 }
-                else System.out.println(selected.getName() + "-$" + selected.getPrice() + "== Stock Remaining:" + selected.getStock());
+
+                else System.out.println(selected.getItemInfoToString()+" SOlD OUT!");
+
+
             }
         }
     }
@@ -28,5 +33,5 @@ public class Selection {
         this.userInput = userInput;
     }
 
-
 }
+
