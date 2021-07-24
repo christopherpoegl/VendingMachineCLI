@@ -1,11 +1,14 @@
 package com.techelevator.vending;
 
+import com.techelevator.view.Purchase;
+
 public class Main {
     public static void main(String[] args){
-        Stocker stocker = new Stocker();
+        Purchase moneyCalc = new Purchase();
+        moneyCalc.addMoney(525);
+        moneyCalc.withdrawMoney(105);
+        moneyCalc.changeBack();
 
-        Selection selection = new Selection();
-        selection.findItems();
 
 //        Fruit honeycrisp = new Apple();
 //        Fruit nicebannana= new Banna();
