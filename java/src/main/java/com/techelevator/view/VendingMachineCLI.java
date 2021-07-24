@@ -1,6 +1,7 @@
-package com.techelevator.vending;
+package com.techelevator.view;
 
-import com.techelevator.view.Menu;
+import com.techelevator.vending.Log;
+import com.techelevator.vending.Selection;
 
 public class VendingMachineCLI {
     Selection selection = new Selection();
