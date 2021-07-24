@@ -2,8 +2,10 @@ package com.techelevator.view;
 
 import com.techelevator.vending.Log;
 import com.techelevator.vending.Selection;
+import com.techelevator.vending.UserInput;
 
 public class VendingMachineCLI {
+    UserInput userIn = new UserInput();
     Selection selection = new Selection();
     Purchase purchase = new Purchase();
     private static final String MAIN_MENU_OPTION_DISPLAY_ITEMS = "Display Vending Machine Items";
@@ -30,22 +32,24 @@ public class VendingMachineCLI {
                 while (true) {
                     String choice2 = (String) menu.getChoiceFromOptions(PURCHASE_MENU_OPTIONS);
                     if (choice2.equals(PURCHASE_MENU_OPTION_FEED_MONEY)) {
-                        //menu.feedMoney();
-                        purchase.addMoney(525);
-                        System.out.println("feedMoney");
+                        userIn.handleInput();
+                        double userMoney = userIn.getUserMoneyIn()*100;
+                        int userPennies = (int)userMoney;
+                        purchase.addMoney(userPennies);
                         log.writeToFile("FEED MONEY");
+
                     } else if (choice2.equals(PURCHASE_MENU_OPTION_SELECT_PRODUCT)) {
-                        selection.setUserInput("A2");
+                        userIn.setPosition();
                         selection.findItems();
-                        log.writeToFile("product selected");
+
+
                     } else if (choice2.equals(PURCHASE_MENU_OPTION_FINISH_TRANSACTION)) {
-                        //menu.makeChange();
+                        log.writeToFile("Make Change");
                         purchase.changeBack();
-                        System.out.println("makeChange");
-                        log.writeToFile(".75");
                         break;
                     }
                 }
+
             }else{
                 System.out.println("Thank you for visiting");
                 System.exit(1);
