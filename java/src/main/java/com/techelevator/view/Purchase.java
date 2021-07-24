@@ -6,6 +6,12 @@ import java.util.Scanner;
 public class Purchase {
     private static int theBalance;
 
+    public static int getMoneyFed() {
+        return moneyFed;
+    }
+
+    private static int moneyFed;
+
     public static int getTheBalance() {
         return theBalance;
     }
@@ -19,6 +25,7 @@ public class Purchase {
     public void addMoney(int feedMoney) {
 
         theBalance = theBalance + feedMoney;
+        this.moneyFed = feedMoney;
         System.out.println(theBalance);
     }
 

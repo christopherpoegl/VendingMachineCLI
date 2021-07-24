@@ -8,7 +8,8 @@ public class VendingMachineCLI {
     Purchase purchase = new Purchase();
     private static final String MAIN_MENU_OPTION_DISPLAY_ITEMS = "Display Vending Machine Items";
     private static final String MAIN_MENU_OPTION_PURCHASE = "Purchase";
-    private static final String[] MAIN_MENU_OPTIONS = { MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE };
+    private static final String MAIN_MENU_OPTION_EXIT = "Exit";
+    private static final String[] MAIN_MENU_OPTIONS = { MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE, MAIN_MENU_OPTION_EXIT };
     private static final String PURCHASE_MENU_OPTION_FEED_MONEY = "Feed Money";
     private static final String PURCHASE_MENU_OPTION_SELECT_PRODUCT = "Select Product";
     private static final String PURCHASE_MENU_OPTION_FINISH_TRANSACTION = "Finish Transaction";
@@ -32,11 +33,11 @@ public class VendingMachineCLI {
                         //menu.feedMoney();
                         purchase.addMoney(525);
                         System.out.println("feedMoney");
-                        log.writeToFile("5");
+                        log.writeToFile("FEED MONEY");
                     } else if (choice2.equals(PURCHASE_MENU_OPTION_SELECT_PRODUCT)) {
                         selection.setUserInput("A2");
                         selection.findItems();
-                        log.writeToFile("Item Location, Name");
+                        log.writeToFile("product selected");
                     } else if (choice2.equals(PURCHASE_MENU_OPTION_FINISH_TRANSACTION)) {
                         //menu.makeChange();
                         purchase.changeBack();
@@ -45,6 +46,9 @@ public class VendingMachineCLI {
                         break;
                     }
                 }
+            }else{
+                System.out.println("Thank you for visiting");
+                System.exit(1);
             }
         }
     }
