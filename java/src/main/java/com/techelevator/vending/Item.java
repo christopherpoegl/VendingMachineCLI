@@ -28,6 +28,10 @@ public class Item {
     public void setStock(String set){
         this.stock = set;
     }
+    public String getItemInfoToString(){
+        String info = this.position +", "+ this.name +", "+ this.price +", Remaining Stock="+ this.stock;
+        return info;
+    }
 
     public Item(String position, String name, String price, String type){
         this.position = position;

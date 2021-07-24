@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 public class Stocker {
-
     List<Item> items = new ArrayList<>();
     File file = new File("vendingmachine.csv");
     Item[] item = new Item[16];
     int count = 0;
-
+    public void getItemList(){
+        for(Item tempList : items)
+            System.out.println(tempList.getItemInfoToString());
+    }
     public void createList() {
         try {
             Scanner scanner = new Scanner(file);
@@ -37,4 +39,3 @@ public class Stocker {
         }
     }
 }
-
