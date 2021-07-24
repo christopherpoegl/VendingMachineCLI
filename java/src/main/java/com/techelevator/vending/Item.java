@@ -1,6 +1,6 @@
 package com.techelevator.vending;
 
-public class Item {
+public class Item implements ConsumptionNoise{
     private String position;
     private String name;
     private String price;
@@ -40,5 +40,9 @@ public class Item {
         this.type = type;
         this.stock = "5";
 
+    }
+
+    @Override
+    public void purchaseMessage() {
     }
 }

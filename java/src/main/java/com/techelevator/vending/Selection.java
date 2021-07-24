@@ -1,7 +1,10 @@
 package com.techelevator.vending;
 
 
+import com.techelevator.view.Purchase;
+
 public class Selection {
+    Purchase purchase = new Purchase();
     Stocker stocker = new Stocker();
     String userInput;
     public void createList(){
@@ -14,13 +17,16 @@ public class Selection {
             if(selected.getPosition().equals("A2")){
                 Integer stockRemaining = Integer.parseInt(selected.getStock());
                 if(stockRemaining>0) {
-                    stockRemaining--;
-                    selected.setStock(stockRemaining.toString());
-                    System.out.println(selected.getItemInfoToString());
-                }
-
-                else System.out.println(selected.getItemInfoToString()+" SOlD OUT!");
-
+                    double price1 = Double.parseDouble(selected.getPrice()) * 100;
+                    int price = (int) price1;
+                    if (purchase.getTheBalance() > price) {
+                        stockRemaining--;
+                        selected.setStock(stockRemaining.toString());
+                        System.out.println(selected.getItemInfoToString());
+                        selected.purchaseMessage();
+                        purchase.withdrawMoney(price);
+                    }else System.out.println("Feed me money!");
+                }else System.out.println(selected.getItemInfoToString()+" SOlD OUT!");
 
             }
         }

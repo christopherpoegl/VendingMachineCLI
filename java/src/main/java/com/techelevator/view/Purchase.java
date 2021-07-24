@@ -6,6 +6,10 @@ import java.util.Scanner;
 public class Purchase {
     private static int theBalance;
 
+    public static int getTheBalance() {
+        return theBalance;
+    }
+
     {
         theBalance = 0;
 
@@ -58,6 +62,7 @@ public class Purchase {
 
                 System.out.println(amountOfQuarters + " quarters, " + amountOfDimes
                         + " dimes, " + amountOfNickels + " nickels");
+                this.theBalance=0;
 
             }
 
