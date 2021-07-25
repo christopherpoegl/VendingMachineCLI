@@ -47,6 +47,7 @@ public class Purchase {
                 temp = temp % 5;
                 System.out.println(amountOfQuarters + " quarters, " + amountOfDimes
                         + " dimes, " + amountOfNickels + " nickels");
+                theBalance=0;
             }
         }
     }
