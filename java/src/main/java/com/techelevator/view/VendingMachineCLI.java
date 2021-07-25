@@ -1,9 +1,7 @@
 package com.techelevator.view;
 import com.techelevator.vending.Log;
 import com.techelevator.vending.Selection;
-
 import java.util.Scanner;
-
 public class VendingMachineCLI {
     Selection selection = new Selection();
     Purchase purchase = new Purchase();

@@ -1,9 +1,7 @@
 package com.techelevator.vending;
 import com.techelevator.view.Purchase;
-
 import java.text.NumberFormat;
 import java.util.Scanner;
-
 public class Selection {
     NumberFormat formatter = NumberFormat.getCurrencyInstance();
     String userSelection = "no";
@@ -12,11 +10,9 @@ public class Selection {
     Stocker stocker = new Stocker();
     String logText;
     Item selected;
-
     public void getStockerList() {
         stocker.createList();
     }
-
     public void findItems() {
         setPosition();
         for (int i = 0; i < stocker.items.size(); i++) {
@@ -38,19 +34,15 @@ public class Selection {
                         userSelection="no";
                     } else System.out.println("You do not have sufficient funds for this purchase. You have "+
                             formatter.format((double)purchase.getTheBalance()/100)+" and "+selected.getName()+" costs $"+selected.getPrice());
-
                 } else System.out.println(selected.getItemInfoToString() + " SOlD OUT!");
             }
         }
     }
-
     public void getItemList() {
         for (Item tempList : stocker.items)
             System.out.println(tempList.getItemInfoToString());
     }
-
     public void setPosition() {
-
         Scanner userPos = new Scanner(System.in);
         System.out.println("Please enter your product's location. Ex A2");
         String pos = userPos.nextLine();
