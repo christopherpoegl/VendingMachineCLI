@@ -16,11 +16,9 @@ public class Purchase {
     public void addMoney(int feedMoney) {
         theBalance = theBalance + feedMoney;
         this.moneyFed = feedMoney;
-
     }
     public void withdrawMoney(int moneyOut) {
         theBalance = theBalance - (moneyOut);
-
     }
     public int moneyInCents() {
         return theBalance;
@@ -32,7 +30,6 @@ public class Purchase {
         return formattedDoubleAsString;
     }
     public void changeBack() {
-
         int temp = theBalance;
         int amountOfQuarters = 0;
         int amountOfDimes = 0;
@@ -50,6 +47,7 @@ public class Purchase {
                 temp = temp % 5;
                 System.out.println(amountOfQuarters + " quarters, " + amountOfDimes
                         + " dimes, " + amountOfNickels + " nickels");
+                theBalance=0;
             }
         }
     }
