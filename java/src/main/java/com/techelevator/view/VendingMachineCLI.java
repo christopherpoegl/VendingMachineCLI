@@ -40,7 +40,6 @@ public class VendingMachineCLI {
                         log.writeToFile("FEED MONEY");
                         userMoneyIn = 0;
                     } else if (choice2.equals(PURCHASE_MENU_OPTION_SELECT_PRODUCT)) {
-                        //userIn.setPosition();
                         selection.findItems();
                     } else if (choice2.equals(PURCHASE_MENU_OPTION_FINISH_TRANSACTION)) {
                         log.writeToFile("Make Change");
