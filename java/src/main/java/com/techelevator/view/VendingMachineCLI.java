@@ -1,12 +1,10 @@
 package com.techelevator.view;
 import com.techelevator.vending.Log;
 import com.techelevator.vending.Selection;
-import com.techelevator.vending.UserInput;
 
 import java.util.Scanner;
 
 public class VendingMachineCLI {
-    UserInput userIn = new UserInput();
     Selection selection = new Selection();
     Purchase purchase = new Purchase();
     double userMoneyIn=0;
@@ -35,7 +33,6 @@ public class VendingMachineCLI {
                 while (true) {
                     String choice2 = (String) menu.getChoiceFromOptions(PURCHASE_MENU_OPTIONS);
                     if (choice2.equals(PURCHASE_MENU_OPTION_FEED_MONEY)) {
-                        System.out.println(purchase.getTheBalance());
                         handleInput();
                         double userMoney = userMoneyIn*100;
                         int userPennies = (int)userMoney;

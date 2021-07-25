@@ -10,7 +10,6 @@ public class Selection {
     Log log = new Log();
     Purchase purchase = new Purchase();
     Stocker stocker = new Stocker();
-    UserInput user = new UserInput();
     String userInput;
     String logText;
     Item selected;
