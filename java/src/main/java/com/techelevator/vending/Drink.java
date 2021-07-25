@@ -8,6 +8,6 @@ public class Drink extends Item implements ConsumptionNoise{
 
     @Override
     public void purchaseMessage() {
-        System.out.println("Glug Glug, Yum!");
+        System.out.println("Chug Chug, Yum!");
     }
 }

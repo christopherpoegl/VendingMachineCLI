@@ -6,8 +6,11 @@ public class Candy extends Item implements ConsumptionNoise{
         super(position, name, price, type);
     }
 
+
     @Override
     public void purchaseMessage() {
         System.out.println("Munch Munch, Yum!");
     }
+
+
 }

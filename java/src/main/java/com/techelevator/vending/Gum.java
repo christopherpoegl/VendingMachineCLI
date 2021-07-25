@@ -8,6 +8,6 @@ public class Gum extends Item implements ConsumptionNoise{
 
     @Override
     public void purchaseMessage() {
-        System.out.println("Chew Chew Yum!");
+        System.out.println("Chew Chew, Yum!");
     }
 }
