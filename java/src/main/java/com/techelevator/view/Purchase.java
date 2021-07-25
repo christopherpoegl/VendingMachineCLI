@@ -19,24 +19,16 @@ public class Purchase {
     }
     public void withdrawMoney(int moneyOut) {
         theBalance = theBalance - (moneyOut);
+
     }
-    public int moneyInCents() {
-        return theBalance;
-    }
-    public String stringBalance() {
-        int currentBalanceAsInt = theBalance;
-        double currentBalanceAsDouble = (currentBalanceAsInt / 100);
-        String formattedDoubleAsString = "$" + String.format("%.2f", currentBalanceAsDouble);
-        return formattedDoubleAsString;
-    }
+
+
     public void changeBack() {
         int temp = theBalance;
         int amountOfQuarters = 0;
         int amountOfDimes = 0;
         int amountOfNickels = 0;
-        int quarters = 25;
-        int dime = 10;
-        int nickels = 5;
+
         if (temp > 0) {
             {
                 amountOfQuarters = temp / 25;
