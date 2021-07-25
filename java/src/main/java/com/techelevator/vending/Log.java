@@ -12,18 +12,17 @@ public class Log {
     NumberFormat formatter = NumberFormat.getCurrencyInstance();
     Purchase purchase = new Purchase();
     String printOutput;
-    double moneyFed = (double) (purchase.getMoneyFed() / 100);
-    double currentBalance = (double) (purchase.getTheBalance()/ 100);
-    private DecimalFormat df2 = new DecimalFormat("#.##");
+
     private String logString = "Nothing here yet.";
+
+
     public void setSelectedItemString(String set){
         this.logString = set;
     }
+
     public void writeToFile(String lineOfText) {
         LocalDateTime dateTime = LocalDateTime.now();
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss a");
-        //System.out.println(dateTime.format(myFormatObj));
-        //System.out.println((double)purchase.getMoneyFed()/100);
         String date = dateTime.format(myFormatObj);
         if (lineOfText.contains("FEED MONEY")) {
             try(PrintWriter printWriter = new PrintWriter( new FileOutputStream("log.txt", true))){
