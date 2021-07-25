@@ -8,7 +8,9 @@ public class Chip extends Item implements ConsumptionNoise{
 
 
     @Override
-    public void purchaseMessage() {
+    public void purchaseMessage(){
         System.out.println("Crunch Crunch, Yum!");
+
     }
+
 }

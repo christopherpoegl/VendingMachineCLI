@@ -14,10 +14,10 @@ public class PurchaseTest {
 
         int moneyFedActual = Purchase.getMoneyFed();
         int moneyFedExpected = 0;
-        
+
         assertEquals(moneyFedActual,moneyFedExpected);
 
-
+        
 
     }
 
