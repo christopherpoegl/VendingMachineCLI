@@ -45,9 +45,9 @@ public class Log {
                 printWriter.println(printOutput);
                 printWriter.flush();
             }
-            else if (lineOfText.contains("product selected") {
-                printOutput = (">" + date + selection.
-            }
+           // else if (lineOfText.contains("product selected") {
+             //   printOutput = (">" + date + selection.
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
