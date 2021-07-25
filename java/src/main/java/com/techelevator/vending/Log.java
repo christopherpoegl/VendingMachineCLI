@@ -44,7 +44,7 @@ public class Log {
                 try(PrintWriter printWriter = new PrintWriter( new FileOutputStream("log.txt", true))){
 
                 printOutput = (">" + date + " FEED MONEY: " + "\\" + formatter.format((double)purchase.getMoneyFed()/100) + " \\" + formatter.format((double)purchase.getTheBalance()/100));
-                    System.out.println("Are we feeding?");
+
                     printWriter.println(printOutput);
                     printWriter.flush();
 
@@ -58,7 +58,6 @@ public class Log {
                 printOutput = (">" + date +" "+ logString + "\\$" + formatter.format((double)purchase.getMoneyFed()/100)) + " \\" + formatter.format((double)purchase.getTheBalance()/100);
                     printWriter.println(printOutput);
                     printWriter.flush();
-                    System.out.println("Are we choosing");
                 }catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -66,13 +65,23 @@ public class Log {
             else if (lineOfText.contains("Make Change")) {
             try(PrintWriter printWriter = new PrintWriter( new FileOutputStream("log.txt", true))){
                 printOutput = (">" + date +" "+ "GIVE CHANGE: " + "\\" + formatter.format((double)purchase.getTheBalance()/100)+"\\$0.00");
-                System.out.println("Are we changing");
-                printWriter.printf(printOutput);
+                printWriter.printf(printOutput+"\n");
                 printWriter.flush();
             }catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
+
         }
+            else if (lineOfText.contains("Exit")) {
+                try(PrintWriter printWriter = new PrintWriter( new FileOutputStream("log.txt", true))){
+                    printOutput = ">\\`\\`\\`";
+                    printWriter.printf(printOutput+"\n");
+                    printWriter.flush();
+                }catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+            }
 
 
 
