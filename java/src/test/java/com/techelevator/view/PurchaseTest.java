@@ -17,7 +17,7 @@ public class PurchaseTest {
 
         assertEquals(moneyFedActual,moneyFedExpected);
 
-        
+
 
     }
 
