@@ -11,11 +11,11 @@ public class VendingMachineCLI {
     private static final String MAIN_MENU_OPTION_PURCHASE = "Purchase";
     private static final String MAIN_MENU_OPTION_EXIT = "Exit";
     private static final String[] MAIN_MENU_OPTIONS = { MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE, MAIN_MENU_OPTION_EXIT };
-    private static final String PURCHASE_MENU_OPTION_FEED_MONEY = "Feed Money";
-    private static final String PURCHASE_MENU_OPTION_SELECT_PRODUCT = "Select Product";
-    private static final String PURCHASE_MENU_OPTION_FINISH_TRANSACTION = "Finish Transaction";
-    private static final String[] PURCHASE_MENU_OPTIONS = { PURCHASE_MENU_OPTION_FEED_MONEY,
-            PURCHASE_MENU_OPTION_SELECT_PRODUCT, PURCHASE_MENU_OPTION_FINISH_TRANSACTION };
+    private static final String SECOND_MENU_OPTION_FEED_MONEY = "Feed Money";
+    private static final String SECOND_MENU_OPTION_SELECT_PRODUCT = "Select Product";
+    private static final String SECOND_MENU_OPTION_FINISH_TRANSACTION = "Finish Transaction";
+    private static final String[] SECOND_MENU_OPTIONS = { SECOND_MENU_OPTION_FEED_MONEY,
+            SECOND_MENU_OPTION_SELECT_PRODUCT, SECOND_MENU_OPTION_FINISH_TRANSACTION };
     private Menu menu;
     Log log = new Log();
     public VendingMachineCLI(Menu menu) {
@@ -29,17 +29,17 @@ public class VendingMachineCLI {
                 selection.getItemList();
             } else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
                 while (true) {
-                    String choice2 = (String) menu.getChoiceFromOptions(PURCHASE_MENU_OPTIONS);
-                    if (choice2.equals(PURCHASE_MENU_OPTION_FEED_MONEY)) {
+                    String choiceSecond = (String) menu.getChoiceFromSecondMenu(SECOND_MENU_OPTIONS);
+                    if (choiceSecond.equals(SECOND_MENU_OPTION_FEED_MONEY)) {
                         handleInput();
                         double userMoney = userMoneyIn*100;
                         int userPennies = (int)userMoney;
                         purchase.addMoney(userPennies);
                         log.writeToFile("FEED MONEY");
                         userMoneyIn = 0;
-                    } else if (choice2.equals(PURCHASE_MENU_OPTION_SELECT_PRODUCT)) {
+                    } else if (choiceSecond.equals(SECOND_MENU_OPTION_SELECT_PRODUCT)) {
                         selection.findItems();
-                    } else if (choice2.equals(PURCHASE_MENU_OPTION_FINISH_TRANSACTION)) {
+                    } else if (choiceSecond.equals(SECOND_MENU_OPTION_FINISH_TRANSACTION)) {
                         log.writeToFile("Make Change");
                         purchase.changeBack();
                         break;
