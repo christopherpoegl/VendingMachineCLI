@@ -15,11 +15,10 @@ public class Purchase {
         theBalance = theBalance + feedMoney;
         this.moneyFed = feedMoney;
     }
+
     public void withdrawMoney(int moneyOut) {
         theBalance = theBalance - (moneyOut);
-
     }
-
 
     public void changeBack() {
         int temp = theBalance;
