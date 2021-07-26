@@ -25,9 +25,9 @@ public class Purchase {
 
     public void changeBack() {
         int temp = theBalance;
-        int amountOfQuarters = 0;
-        int amountOfDimes = 0;
-        int amountOfNickels = 0;
+        int amountOfQuarters;
+        int amountOfDimes;
+        int amountOfNickels;
 
         if (temp > 0) {
             {
