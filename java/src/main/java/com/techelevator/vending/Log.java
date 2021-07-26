@@ -9,6 +9,7 @@ import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 public class Log {
+
     NumberFormat formatter = NumberFormat.getCurrencyInstance();
     Purchase purchase = new Purchase();
     String printOutput;
