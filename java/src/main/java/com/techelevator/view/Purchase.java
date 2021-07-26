@@ -2,7 +2,7 @@ package com.techelevator.view;
 import java.lang.module.FindException;
 import java.util.Scanner;
 public class Purchase {
-    private static int theBalance;
+    private static int theBalance =0;
     public static int getMoneyFed() {
         return moneyFed;
     }
@@ -10,18 +10,15 @@ public class Purchase {
     public static int getTheBalance() {
         return theBalance;
     }
-    {
-        theBalance = 0;
-    }
+
     public void addMoney(int feedMoney) {
         theBalance = theBalance + feedMoney;
         this.moneyFed = feedMoney;
     }
+
     public void withdrawMoney(int moneyOut) {
         theBalance = theBalance - (moneyOut);
-
     }
-
 
     public void changeBack() {
         int temp = theBalance;

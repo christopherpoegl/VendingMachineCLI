@@ -4,7 +4,7 @@ import java.text.NumberFormat;
 import java.util.Scanner;
 public class Selection {
     NumberFormat formatter = NumberFormat.getCurrencyInstance();
-    String userSelection = "no";
+    public String userSelection = "no";
     Log log = new Log();
     Purchase purchase = new Purchase();
     Stocker stocker = new Stocker();

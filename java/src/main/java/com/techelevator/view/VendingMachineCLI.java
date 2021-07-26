@@ -3,10 +3,10 @@ import com.techelevator.vending.Log;
 import com.techelevator.vending.Selection;
 import java.util.Scanner;
 public class VendingMachineCLI {
+    Log log = new Log();
     Selection selection = new Selection();
     Purchase purchase = new Purchase();
-    double userMoneyIn=0;
-    boolean run = false;
+
     private static final String MAIN_MENU_OPTION_DISPLAY_ITEMS = "Display Vending Machine Items";
     private static final String MAIN_MENU_OPTION_PURCHASE = "Purchase";
     private static final String MAIN_MENU_OPTION_EXIT = "Exit";
@@ -16,8 +16,10 @@ public class VendingMachineCLI {
     private static final String SECOND_MENU_OPTION_FINISH_TRANSACTION = "Finish Transaction";
     private static final String[] SECOND_MENU_OPTIONS = { SECOND_MENU_OPTION_FEED_MONEY,
             SECOND_MENU_OPTION_SELECT_PRODUCT, SECOND_MENU_OPTION_FINISH_TRANSACTION };
+    private double userMoneyIn=0;
     private Menu menu;
-    Log log = new Log();
+
+
     public VendingMachineCLI(Menu menu) {
         this.menu = menu;
     }
@@ -53,15 +55,21 @@ public class VendingMachineCLI {
         }
     }
     public void handleInput() {
+
         Scanner userIn = new Scanner(System.in);
-        System.out.println("Please enter a dollar amount. Ex 5.25");
+        System.out.println("Please enter a dollar amount. Ex 5.00");
         while (userMoneyIn == 0) {
+
             try {
-                this.userMoneyIn = Double.parseDouble(userIn.nextLine());
-                run = false;
+                userMoneyIn = Double.parseDouble(userIn.nextLine());
+
             } catch (NumberFormatException e) {
-                System.out.println("not a number");
+                System.out.println("That was not a number.");
+            }if(userMoneyIn%1!=0){
+                System.out.println("Please enter a whole dollar amount. Ex 5.00");
+                userMoneyIn=0;
             }
+
         }
     }
     public static void main(String[] args) {
